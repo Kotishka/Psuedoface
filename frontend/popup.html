@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" type="text/css" href="main.css"> -->
+    <link rel="stylesheet" type="text/css" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.css">
+    <link href="node_modules/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="node_modules/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.css" rel="stylesheet">
+    <link href="node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <link href="node_modules/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container" style="min-width:400px;height:auto">
+        <div class="min-vh-100 m-auto text-center p-2">
+            <h1>Pseudoface</h1>
+            <input type="file" class="filepond mx-auto" multiple data-allow-reorder="true" data-max-file-size="3MB" data-max-files="3">
+        </div>
+    </div>
+
+
+    <script src="node_modules/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.js"></script>
+    <script src="node_modules/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+    <script src="node_modules/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
+    <script src="node_modules/filepond/dist/filepond.js"></script>
+    <script src="bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>
