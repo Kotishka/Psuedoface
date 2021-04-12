@@ -4,9 +4,15 @@ import tempfile
 import os
 import pathlib
 import io
+import asyncio
 
 api = Flask('Psuedoface API')
-fawkes = Fawkes('protector', '0', 1)
+
+@api.route('/', methods=['OPTIONS'])
+def cors():
+    response = Response(status=200)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 @api.route('/', methods=['POST'])
 def index():
@@ -16,7 +22,7 @@ def index():
     tmp.close()
     print(tmp.name)
 
-    status1 = fawkes.run_protection([tmp.name])
+    status1 = Fawkes('protector0', '0', 1).run_protection([tmp.name])
     os.remove(tmp.name)
     if status1 == 1:
         returnData = None
@@ -24,8 +30,11 @@ def index():
             returnData = cloaked.read()
         os.remove(os.path.join(os.getcwd(), "_cloaked.png"))
         res = Response(response=returnData, status=200, mimetype="image/png")
+        res.headers.add('Access-Control-Allow-Origin', '*')
         return res
-    return Response(status=500, response='')
+    res = Response(status=500, response='')
+    res.headers.add('Access-Control-Allow-Origin', '*')
+    return res
 
 if __name__ == '__main__':
     api.run()
