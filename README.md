@@ -24,7 +24,7 @@ Project is created with:
 4. In your selected terminal from the Psuedoface folder, `cd backend` and run `pip install fawkes` to install python libraries. This requires to have python v3.5-3.8 installed. Additionally, you may need to run terminal as admin to allow the files to be installed.
 
 ## Running the project
-1. To start the web api, run `python app/web.py` in your terminal.
+1. To start the web api, run `python app/web.py` in your terminal from the Psuedoface/backend directory.
 2. Enable the extension through `chrome://extensions/`.
 3. Open a new tab and use the extension. The extension will not work on `chrome://extensions/` or any other `chrome://` pages due to security features.
 
