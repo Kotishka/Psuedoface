@@ -43,7 +43,12 @@ function cloakFile(fieldName, file, metadata, load, error, progress, abort){
   };
 
   fetch("http://localhost:5000", requestOptions)
-    .then(response => response.blob())
+    .then(response => {
+      if(response.status != 200){
+        throw("error");
+      }
+      return response.blob()
+    })
     .then(response => {
       download(response, `cloaked.png`, "image/png");
       load(file.name);
@@ -51,7 +56,7 @@ function cloakFile(fieldName, file, metadata, load, error, progress, abort){
     .catch(err => {
       console.log('error', err)
       error(file.name);
-    });
+    })
 }
 
 // Function to download data to a file
