@@ -8,5 +8,5 @@
 
 
 ## Running the project
-1. Enable the extension through `chrome.://extensions/`.
+1. Enable the extension through `chrome://extensions/`.
 2. Open a new tab and use the extension. The extension will not work on `chrome://extensions/` or any other `chrome://` domains.
